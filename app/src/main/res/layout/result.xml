@@ -1,0 +1,138 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+    xmlns:tools="http://schemas.android.com/tools"
+
+
+    android:layout_width="match_parent"
+
+
+    android:layout_height="match_parent"
+    android:id="@+id/relativlayout">
+
+
+    <TextView
+
+
+        android:id="@+id/textHeight"
+
+
+        android:layout_width="wrap_content"
+
+
+        android:layout_height="wrap_content"
+
+
+        android:text="@string/bmi_height" />
+
+
+    <EditText
+
+
+        android:id="@+id/inputHeight"
+
+
+        style="editTextStyle"
+
+
+        android:layout_width="fill_parent"
+
+
+        android:layout_height="wrap_content"
+
+
+        android:layout_alignParentLeft="true"
+
+
+        android:layout_below="@+id/textHeight"
+
+
+        android:inputType="number" />
+
+
+    <TextView
+
+
+        android:id="@+id/textWeight"
+
+
+        android:layout_width="fill_parent"
+
+
+        android:layout_height="wrap_content"
+
+
+        android:layout_alignParentLeft="true"
+
+
+        android:layout_below="@+id/inputHeight"
+
+
+        android:text="@string/bmi_weight" />
+
+
+    <EditText
+
+
+        android:id="@+id/inputWeight"
+
+
+        android:layout_width="fill_parent"
+
+
+        android:layout_height="wrap_content"
+
+
+        android:layout_alignParentLeft="true"
+
+
+        android:layout_below="@+id/textWeight"
+
+
+        android:ems="10"
+
+
+        android:inputType="number" />
+
+
+    <Button
+
+
+        android:id="@+id/calcBMI"
+
+
+        android:layout_width="fill_parent"
+
+
+        android:layout_height="wrap_content"
+
+
+        android:layout_alignParentLeft="true"
+
+
+        android:layout_below="@+id/inputWeight"
+
+
+        android:text="@string/enter" />
+
+
+    <Button
+        android:id="@+id/clear"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/clear"
+        android:layout_below="@+id/calcBMI"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="43dp" />
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/back"
+        android:layout_marginTop="41dp"
+        android:layout_below="@+id/clear"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>

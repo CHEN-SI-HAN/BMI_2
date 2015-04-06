@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">BMI_2</string>
+
+    <string name="BMI">BMI值為:</string>
+    <string name="result">結果為:</string>
+    <string name="real">面對BMI現實</string>
+    <string name="end">結束去運動</string>
+    <string name="bmi_height">身高 (cm)</string>
+    <string name="bmi_weight">體重 (kg)</string>
+    <string name="inputError">資料未輸入或輸入錯誤，請返回再輸入一次！！</string>
+    <string name="advice_light">你太瘦囉</string>
+    <string name="advice_average">體型不錯喔</string>
+    <string name="advice_heavy">你該減肥了</string>
+    <string name="enter">確認</string>
+    <string name="clear">清除</string>
+    <string name="back">返回</string>
+    <string name="action_settings">Settings</string>
+</resources>
