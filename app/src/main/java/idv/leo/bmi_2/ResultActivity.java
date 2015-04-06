@@ -35,6 +35,7 @@ public class ResultActivity extends ActionBarActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                setResult(RESULT_CANCELED);
                 ResultActivity.this.finish();
             }
         });
@@ -42,8 +43,7 @@ public class ResultActivity extends ActionBarActivity {
         calcBMI.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                inputHeight = (EditText) findViewById(R.id.inputHeight);
-                inputWeight = (EditText) findViewById(R.id.inputWeight);
+
                 Intent intent = new Intent();
                 intent.setClass(ResultActivity.this, MainActivity.class);
                 Bundle bundle = new Bundle();
@@ -71,7 +71,8 @@ public class ResultActivity extends ActionBarActivity {
                     return;
                 }
                 intent.putExtras(bundle);
-                startActivity(intent);
+                setResult(RESULT_OK,intent);
+                finish();
             }
         });
     }

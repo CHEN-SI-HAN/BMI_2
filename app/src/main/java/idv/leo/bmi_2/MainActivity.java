@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity {
+    private final int RESULT_REQUEST = 0;
     private Button btnReal , btnEnd;
     private TextView textBMI , textResult;
 
@@ -19,7 +20,7 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         findViews();
-        showResult();
+//        showResult();
 
     }
 public void findViews(){
@@ -38,29 +39,45 @@ public void findViews(){
         public void onClick(View view) {
             Intent intent = new Intent();
             intent.setClass(MainActivity.this, ResultActivity.class);
-            startActivity(intent);
-        }
+            startActivityForResult(intent, RESULT_REQUEST);
+                            }
     });
 
 }
-public void showResult(){
-    Bundle bundle = this.getIntent().getExtras();
-    double BMI = bundle.getDouble("BMI");
-    textBMI.setText(" BMI： " + BMI);
-    if (BMI > 25) {
 
-        textResult.setText(R.string.advice_heavy);
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode != RESULT_REQUEST) {
+            return;
+        }
 
-    } else if (BMI < 20) {
+        switch (resultCode) {
+            case RESULT_OK:
+                Bundle bundle = data.getExtras();
 
-        textResult.setText(R.string.advice_light);
+                double BMI = bundle.getDouble("BMI");
+                textBMI.setText(" BMI： " + BMI);
+                if (BMI > 25) {
 
-    } else {
+                    textResult.setText(R.string.advice_heavy);
 
-        textResult.setText(R.string.advice_average);
+                } else if (BMI < 20) {
 
+                    textResult.setText(R.string.advice_light);
+
+                } else {
+
+                    textResult.setText(R.string.advice_average);
+
+                }
+                break;
+            case RESULT_CANCELED:
+                textBMI.setText(" BMI： " );
+                  break;
+        }
     }
-}
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
